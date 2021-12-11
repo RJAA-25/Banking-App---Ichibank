@@ -1,23 +1,85 @@
+body {
+  background: #1e1f23;
+}
+
 .container {
   width: 50vw;
   height: 50vh;
-
   display: grid;
   grid-template: 1fr / 50% 50%;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 .design {
-  background-color: skyblue;
+  background: url(https://images.unsplash.com/photo-1545569341-9eb8b30979d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  background-position: right;
 }
 
 .content {
   padding: 2rem;
-  border: 1px solid black;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+}
+
+.content h1 {
+  color: #fff;
+  font-weight: 500;
+}
+
+.content h1 span {
+  color: #27cdff;
+}
+
+.content p {
+  color: #fff;
+}
+
+.form_label {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.form_input {
+  display: block;
+  padding-left: 10px;
+  outline: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 200%;
+  border: none;
+}
+
+.form_input_btn {
+  width: 85%;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 2px;
+  background: linear-gradient(90deg,
+      rgb(119, 0, 0) 0%,
+      rgb(236, 20, 13) 100%);
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  transition: all 0.4s ease-out;
+}
+
+.form_input_btn:hover {
+  cursor: pointer;
+  background: linear-gradient(90deg,
+      rgb(236, 20, 13)0%,
+      rgb(119, 0, 0) 100%);
 }
 
 span {

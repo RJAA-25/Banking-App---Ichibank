@@ -6,10 +6,12 @@
   z-index: 10;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .container .logo {
   margin-top: 2rem;
+  padding-left: 5rem;
 }
 
 .container .logo a {
@@ -22,6 +24,7 @@
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
+  padding-right: 5rem;
 }
 
 .container ul li a {
