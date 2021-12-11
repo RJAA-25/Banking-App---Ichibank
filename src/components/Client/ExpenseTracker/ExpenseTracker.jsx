@@ -11,7 +11,6 @@ const ExpenseTracker = (props) => {
     // Destructured Properties
     const {clientUser, setUpdate} = props;
     const memberList = JSON.parse(localStorage.getItem("memberList"));
-    // let filter = memberList.filter(obj => obj.accountNo !== clientUser.accountNo);
     
     // States
     const [budget, setBudget] = useState(0);

@@ -10,9 +10,8 @@ li {
   width: 90vw;
   height: 80vh;
 
-  /* padding: 2rem; */
   border-radius: 1rem;
-  background-color: orange;
+  background-color: rgb(30, 30, 30);
 
   display: grid;
   grid-template: 1fr / 1fr 1fr;
@@ -31,14 +30,80 @@ li {
 
 .greeting {
   width: 100%;
-  height: 10%;
+  height: 15%;
 
-  padding: 1rem;
+  font-size: 2rem;
+
+  background-color: white;
+
+  margin: 1rem 0;
+  padding: 2rem;
   border: 1px solid black;
   border-radius: 1rem;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.greeting button {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+
+  color: white;
+  background-color: #404040;
+
+  border-style: none;
+  transition: 0.2s;
+}
+
+.greeting button:hover {
+  background-color: rgb(230, 0, 0);
+  color: white;
+}
+
+.dataContainer {
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dataLeft {
+  width: 50%;
+  height: 90%;
+
+  background-color: rgb(230, 0, 0);
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2rem;
+}
+
+.dataLeft h1 {
+  margin: 1rem;
+  color: white;
+}
+
+.dataRight {
+  width: 45%;
+  height: 90%;
+
+  background-color: #404040;
+  border-radius: 1rem;
+
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -49,24 +114,75 @@ li {
 }
 
 .accountDetails {
-  padding: 1rem;
-  border: 1px solid black;
+  width: 100%;
+  height: 40%;
+  padding: 1rem 2rem;
   border-radius: 1rem;
+
+  font-size: 1.3rem;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .contactDetails {
-  padding: 1rem;
-  border: 1px solid black;
+  width: 100%;
+  height: 40%;
+
+  font-size: 1.3rem;
+
+  padding: 1rem 2rem;
   border-radius: 1rem;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .history {
+  width: 100%;
+  height: 10%;
+
+  margin: 1rem 0;
   padding: 1rem;
   border: 1px solid black;
   border-radius: 1rem;
+
+  background-color: #404040;
+  color: white;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.historyOutput {
+  width: 50%;
+  height: auto;
+
+  padding: 1rem 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  border-radius: 1rem;
+
+  background-color: rgb(230, 0, 0);
+}
+
+.historyOutput li {
+  font-weight: bold;
 }
 
 .transaction {
+  background-color: white;
   padding: 1rem;
   border: 1px solid black;
   border-radius: 1rem;

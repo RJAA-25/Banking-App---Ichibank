@@ -36,30 +36,39 @@ const ClientHero = (props) => {
 
             <div className={styles.core}>
                 <section className={styles.greeting}>
-                    <h1>Hi, {clientUser.firstName}</h1>
+                    <h1>Hi, <span>{clientUser.firstName}</span></h1>
                     <button onClick={handleLogout}>Log Out</button>
                 </section>
 
-                <section className={styles.balance}>
-                    <h2>Balance: ¥{clientUser.balance}</h2>
-                </section>
+                <div className={styles.dataContainer}>
 
-                <section className={styles.accountDetails}>
-                    <p>Username: {clientUser.username}</p>
-                    <p>Account#: {clientUser.accountNo}</p>
-                </section>
+                    <div className={styles.dataLeft}>
+                        {/* <section className={styles.balance}> */}
+                            <h2>Balance</h2>
+                            <h1>¥{clientUser.balance}</h1>
+                        {/* </section> */}
+                    </div>
 
-                <section className={styles.contactDetails}>
-                    <p>Email: {clientUser.email}</p>
-                    {clientUser.phone !== ""
-                        ?   <p>Phone#: {clientUser.phone}</p>
-                        :   <p>No contact number available</p>}
-                </section>
+                    <div className={styles.dataRight}>
+                        <section className={styles.accountDetails}>
+                            <strong>Username: {clientUser.username}</strong>
+                            <strong>Account#: {clientUser.accountNo}</strong>
+                        </section>
 
+                        <section className={styles.contactDetails}>
+                            <strong>Email: {clientUser.email}</strong>
+                            {clientUser.phone !== ""
+                                ?   <strong>Phone#: {clientUser.phone}</strong>
+                                :   <strong>No contact number available</strong>}
+                        </section>
+                    </div>
+
+                </div>
                 <section className={styles.history}>
                     {clientUser.history.length !== 0
                         ?   <>
-                                <p>Latest Transaction:</p>
+                                <strong>Latest Transaction:</strong>
+                                <div className={styles.historyOutput}>  
                                 {clientUser.history[0].type === "deposit"
                                     ?   <li>Deposit: ¥{clientUser.history[0].amount}</li>
                                     :   clientUser.history[0].type === "withdraw"
@@ -67,10 +76,13 @@ const ClientHero = (props) => {
                                             :   clientUser.accountNo === clientUser.history[0].sender
                                                     ?   <li>Transfer: Sent ¥{clientUser.history[0].amount} to Acct#&nbsp;{clientUser.history[0].receiver}</li>
                                                     :   <li>Transfer: Received ¥{clientUser.history[0].amount} from Acct#&nbsp;{clientUser.history[0].sender}</li>}
+                                </div>
                             </>
                         :   <>
-                                <p>Latest Transaction:</p>
-                                <li>No Transactions Made</li>
+                                <strong>Latest Transaction:</strong>
+                                <div className={styles.historyOutput}>  
+                                    <li>No Transactions Made</li>
+                                </div>
                             </>}
                 </section>
                 

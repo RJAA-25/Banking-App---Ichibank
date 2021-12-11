@@ -22,8 +22,8 @@ const ExpenseList = (props) => {
 
     return (
         <li className={styles.list}>
-            <span>¥ {cost}</span>
-            <span>{title}</span>
+            <strong>¥ {cost}</strong>
+            <strong>{title}</strong>
             <button onClick={handleRemove}>Remove</button>
         </li>
     )
