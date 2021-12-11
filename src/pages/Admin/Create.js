@@ -9,6 +9,7 @@ import { motion, useAnimation } from 'framer-motion/dist/es/';
 
 // Components
 import AccountNo from '../../components/Admin/Hero/Create/AccountNo'
+import Sidebar from '../../components/Sidebar/Sidebar';
 
 const Create = () => {
 
@@ -120,6 +121,8 @@ const Create = () => {
             
             {adminActive 
                 ? 
+                    <>
+                    <Sidebar />
                     <section className={styles.content}>
 
                         <h1>Create New Account</h1>
@@ -222,7 +225,7 @@ const Create = () => {
                                 <h5>{errorPassword}</h5>
                             
                             <br />
-                            
+
                             <AccountNo onGenerate = {onGenerate}/>
 
                             
@@ -253,6 +256,7 @@ const Create = () => {
                         </form>
                     
                     </section>
+                    </>
 
                 : 
                     <div>Please Log In to continue</div>}
