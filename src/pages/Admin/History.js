@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom';
 // CSS
 import styles from './history.module.css';
 
+// Components
+import Sidebar from '../../components/Sidebar/Sidebar';
+
 const History = () => {
 
     // Destructured Properties
@@ -15,6 +18,7 @@ const History = () => {
 
     return (
         <div className={styles.container}>
+            <Sidebar />
 
             <section className={styles.history}>
 

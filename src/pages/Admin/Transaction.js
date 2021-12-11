@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './transaction.module.css'
 
 // Components
+import Sidebar from '../../components/Sidebar/Sidebar';
 import Deposit from '../../components/Admin/Hero/Transactions/Deposit/Deposit'
 import Withdraw from '../../components/Admin/Hero/Transactions/Withdraw/Withdraw'
 import Transfer from '../../components/Admin/Hero/Transactions/Transfer/Transfer'
@@ -17,7 +18,10 @@ const Transaction = () => {
     const [transfer, setTransfer] = useState(false);
 
     return (
+        <>
+        
         <div className={styles.container}>
+        <Sidebar />
 
             <button>
                 <NavLink className={styles.navLink} to="/admin" exact>Go Back</NavLink>
@@ -59,6 +63,7 @@ const Transaction = () => {
             </div>
             
         </div>
+        </>
     )
 }
 
