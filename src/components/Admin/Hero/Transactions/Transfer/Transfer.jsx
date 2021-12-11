@@ -16,6 +16,7 @@ const Transfer = () => {
     const [targetSender, setTargetSender] = useState({});
     const [targetReceiver, setTargetReceiver] = useState({});
     const [filter, setFilter] = useState([]);
+    const [error, setError] = useState("");
 
     // Effect
     useEffect(() => {
@@ -49,18 +50,23 @@ const Transfer = () => {
             sender: senderAccount,
             receiver: receiverAccount
         }
-        targetSender.history.unshift(history);
-        targetReceiver.history.unshift(history);
-        transactionHistory.unshift(history);
-        targetSender.balance = parseInt(targetSender.balance) - parseInt(transfer);
-        targetReceiver.balance = parseInt(targetReceiver.balance) + parseInt(transfer);
-        filter.push(targetSender, targetReceiver);
-        localStorage.setItem("memberList", JSON.stringify(filter));
-        localStorage.setItem("transactionHistory", JSON.stringify(transactionHistory));
-        alert(`Trasferred ${transfer} from ${targetSender.firstName} ${targetSender.lastName} to ${targetReceiver.firstName} ${targetReceiver.lastName}`);
-        setSenderAccount(targetSender.accountNo);
-        setReceiverAccount(targetReceiver.accountNo);
-        setTransfer("");
+        if (parseInt(transfer) <= parseInt(targetSender.balance)) {
+            targetSender.history.unshift(history);
+            targetReceiver.history.unshift(history);
+            transactionHistory.unshift(history);
+            targetSender.balance = parseInt(targetSender.balance) - parseInt(transfer);
+            targetReceiver.balance = parseInt(targetReceiver.balance) + parseInt(transfer);
+            filter.push(targetSender, targetReceiver);
+            localStorage.setItem("memberList", JSON.stringify(filter));
+            localStorage.setItem("transactionHistory", JSON.stringify(transactionHistory));
+            alert(`Trasferred ${transfer} from ${targetSender.firstName} ${targetSender.lastName} to ${targetReceiver.firstName} ${targetReceiver.lastName}`);
+            setSenderAccount(targetSender.accountNo);
+            setReceiverAccount(targetReceiver.accountNo);
+            setTransfer("");
+        } else {
+            alert(`Transaction Failed: Insufficient Bank Funds`);
+            setError("Transaction Failed: Insufficient Bank Funds");
+        }
     }
 
     return (
@@ -99,8 +105,9 @@ const Transfer = () => {
                 <input
                     type="number"
                     value={transfer}
-                    onChange={(e) => {setTransfer(e.target.value)}}
+                    onChange={(e) => {setTransfer(e.target.value); setError("");}}
                     required/>
+                <h5>{error}</h5>
             </label>
 
             <button

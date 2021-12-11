@@ -15,6 +15,9 @@ const Withdraw = () => {
     const [withdraw, setWithdraw] = useState("");
     const [target, setTarget] = useState({});
     const [filter, setFilter] = useState([]);
+    
+    // Error States
+    const [error, setError] = useState("");
 
     //Effects
     useEffect(() => {
@@ -39,17 +42,23 @@ const Withdraw = () => {
             sender: accountNo,
             receiver: "",
         }
-        target.history.unshift(history);
-        transactionHistory.unshift(history);
-        target.balance = parseInt(target.balance) - parseInt(withdraw);
-        totalBalance -= parseInt(withdraw);
-        filter.push(target);
-        localStorage.setItem("memberList", JSON.stringify(filter));
-        localStorage.setItem("totalBalance", totalBalance);
-        localStorage.setItem("transactionHistory", JSON.stringify(transactionHistory));
-        alert(`Withdrawn ${withdraw} from ${target.firstName} ${target.lastName}`);
-        setAccountNo(target.accountNo);
-        setWithdraw("");
+
+        if (parseInt(withdraw) <= parseInt(target.balance)) {
+            target.history.unshift(history);
+            transactionHistory.unshift(history);
+            target.balance = parseInt(target.balance) - parseInt(withdraw);
+            totalBalance -= parseInt(withdraw);
+            filter.push(target);
+            localStorage.setItem("memberList", JSON.stringify(filter));
+            localStorage.setItem("totalBalance", totalBalance);
+            localStorage.setItem("transactionHistory", JSON.stringify(transactionHistory));
+            alert(`Withdrawn ${withdraw} from ${target.firstName} ${target.lastName}`);
+            setAccountNo(target.accountNo);
+            setWithdraw("");
+        } else {
+            alert(`Transaction Failed: Insufficient Bank Funds`);
+            setError("Transaction Failed: Insufficient Bank Funds");
+        }
     }
 
     return (
@@ -73,8 +82,9 @@ const Withdraw = () => {
                 <input
                     type="number"
                     value={withdraw}
-                    onChange={(e) => {setWithdraw(e.target.value)}}
+                    onChange={(e) => {setWithdraw(e.target.value); setError("");}}
                     required/>
+                <h5>{error}</h5>
             </label>
 
             <button
