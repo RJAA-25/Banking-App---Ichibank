@@ -1,0 +1,45 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.select {
+  width: 80vw;
+  height: 10vh;
+
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  place-items: stretch;
+}
+
+.select section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+
+  cursor: pointer;
+}
+
+.transaction {
+  width: 80vw;
+  height: 50vh;
+
+  padding: 2rem;
+
+  border: 1px solid black;
+  background-color: skyblue;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
+}
+
+.navLink {
+  text-decoration: none;
+}

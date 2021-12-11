@@ -1,0 +1,73 @@
+button {
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 90vw;
+  height: 80vh;
+
+  /* padding: 2rem; */
+  border-radius: 1rem;
+  background-color: orange;
+
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+}
+
+.core {
+  padding: 2rem;
+}
+
+.feature {
+  padding: 2rem;
+
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.greeting {
+  width: 100%;
+  height: 10%;
+
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.accountDetails {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.contactDetails {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.history {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.transaction {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+}

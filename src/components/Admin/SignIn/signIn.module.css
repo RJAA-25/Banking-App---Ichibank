@@ -1,0 +1,31 @@
+.container {
+  width: 50vw;
+  height: 50vh;
+
+  display: grid;
+  grid-template: 1fr / 50% 50%;
+}
+
+.design {
+  background-color: skyblue;
+}
+
+.content {
+  padding: 2rem;
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+span {
+  color: red;
+  cursor: pointer;
+}
+
+h5 {
+  color: red;
+  font-style: italic;
+}

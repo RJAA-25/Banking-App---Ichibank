@@ -1,0 +1,13 @@
+import React from 'react'
+
+import styles from './home.module.css'
+
+const Home = () => {
+    return (
+        <div>
+           This is the Home Page
+        </div>
+    )
+}
+
+export default Home

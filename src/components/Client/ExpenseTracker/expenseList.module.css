@@ -1,0 +1,17 @@
+.list {
+  width: 100%;
+
+  margin: 1rem 0;
+  padding: 1rem;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list span {
+  color: black;
+}

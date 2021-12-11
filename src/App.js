@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
+
+// Components
+import Navbar from './components/Navbar/Navbar.jsx';
+
+// Pages
+import Home from './pages/Home/Home.js';
+import Admin from './pages/Admin/Admin.js';
+import Client from './pages/Client/Client.js';
+
+import Create from './pages/Admin/Create.js';
+import Transaction from './pages/Admin/Transaction.js';
+import Members from './pages/Admin/Members.js';
+import History from './pages/Admin/History.js';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Router>
+        <Navbar />
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            
+            <Route path="/admin">
+              <Admin />
+            </Route>
+
+              <Route path="/admin-create">
+                <Create/>
+              </Route>
+
+              <Route path="/admin-transaction">
+                <Transaction/>
+              </Route>
+
+              <Route path="/admin-members">
+                <Members/>
+              </Route>
+
+              <Route path="/admin-history">
+                <History/>
+              </Route>
+
+            <Route path="/client">
+              <Client />
+            </Route>
+
+          </Switch>
+          </main>
+      </Router>
+    </>
+  )
+  
 }
 
-export default App;
+export default App
