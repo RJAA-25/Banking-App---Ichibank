@@ -1,0 +1,117 @@
+.container {
+    position: relative;
+    transform: translateY(10vh);
+    width: 100%;
+    min-height: 90vh;
+    background: #1e1f23;
+    color: #fff;
+    display: grid;
+    overflow: hidden;
+}
+
+.topLeftRadius {
+    position: absolute;
+    margin-top: 1rem;
+    width: 15vw;
+    height: 10vh;
+    background: #141414;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.textContainer {
+    display: grid;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+}
+
+.title .ichi {
+    letter-spacing: 1px;
+}
+
+.title .bank {
+    color: rgb(230, 0, 0);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.icons i {
+    margin: 1rem;
+}
+
+.imgContainer {
+    display: grid;
+    grid-template: 1fr / repeat(3, 1fr);
+}
+
+.cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    transition: 0.25s ease-in;
+}
+
+.cardImg:hover {
+    transform: translateY(-5px);
+}
+
+/* Media Queries ---*/
+@media (min-width: 320px) {
+    .container {
+        grid-template: 30% 70% / 1fr;
+    }
+
+    .textContainer {
+        grid-template: 80% 20% / 1fr;
+    }
+
+    .icons {
+        justify-content: center;
+    }
+
+    .imgContainer {
+        place-items: center;
+        /* padding: 2rem 0; */
+    }
+
+    .card {
+        width: 90%;
+        height: 70%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        grid-template: 1fr / 40% 60%;
+    }
+
+    .textContainer {
+        grid-template: 80% 20% / 1fr;
+    }
+
+    .icons {
+        justify-content: flex-start;
+    }
+
+    .imgContainer {
+        justify-items: center;
+        align-items: start;
+    }
+
+    .card {
+        width: 90%;
+        height: 70%;
+        margin: 3rem 0;
+    }
+}
