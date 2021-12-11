@@ -1,11 +1,60 @@
 .container {
   width: 80vw;
   height: 80vh;
-
-  background-color: orange;
+  overflow-y: hidden;
+  /* background-color: orange; */
 }
 
-.links {
+.adminUser {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.adminUser button {
+  margin-left: 10rem;
+  background: white;
+  border: none;
+  outline: none;
+  margin-top: 5rem;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  border-radius: 15px;
+  transition: 0.25s;
+}
+
+.adminUser button:hover {
+  background: red;
+  color: white;
+}
+
+.adminUser h1 {
+  margin-top: 2.5rem;
+  color: #fff;
+  font-size: 5rem;
+  border-bottom: 3px solid red;
+  width: 40vw;
+}
+
+.cardContainer {
+  height: 65vh;
+  margin-top: 5rem;
+  display: grid;
+  place-content: center;
+  text-align: left;
+  color: #fff;
+  /* background: black; */
+  font-size: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.cardContainer img {
+  margin-top: 2.5rem;
+  width: 80%;
+  height: 50%;
+  border-radius: 25px;
+  transition: 0.25s;
+}
+
+.cardContainer img:hover {
+  transform: scale(1.05);
 }
