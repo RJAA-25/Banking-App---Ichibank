@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 // Icons
+import CreateIcon from '@material-ui/icons/Create';
+import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import LooksOneOutlinedIcon from '@material-ui/icons/LooksOneOutlined';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
@@ -34,7 +36,7 @@ const Sidebar = () => {
                     onClick={() => setClick(false)}
                     exact
                     activeClassName="active"
-                    to="/banking-app"
+                    to="/admin"
                 >
                     <img src={Home} alt="Home" />
                     <Text clicked={click}>Home</Text>
@@ -42,8 +44,28 @@ const Sidebar = () => {
 
                 <Item
                     onClick={() => setClick(false)}
+                    exact
                     activeClassName="active"
-                    to="/transactions"
+                    to="/admin-create"
+                >
+                    <CreateIcon />
+                    <Text clicked={click}>Create Holder</Text>
+                </Item>
+
+                <Item
+                    onClick={() => setClick(false)}
+                    exact
+                    activeClassName="active"
+                    to="/admin-transaction"
+                >
+                    <NoteAddIcon />
+                    <Text clicked={click}>Make Transaction</Text>
+                </Item>
+
+                <Item
+                    onClick={() => setClick(false)}
+                    activeClassName="active"
+                    to="/admin-history"
                     exact
                 >
                     <img src={Draft} alt="Transactions" />
@@ -53,7 +75,7 @@ const Sidebar = () => {
                 <Item
                     onClick={() => setClick(false)}
                     activeClassName="active"
-                    to="/members"
+                    to="/admin-members"
                     exact
                 >
                     <img src={Social} alt="Members" />
@@ -81,9 +103,10 @@ const Sidebar = () => {
 }
 
 const Container = styled.div`
-  padding-top: 3vh;
+  padding-top: 6vh;
   padding-left: 0vw;
   position: fixed;
+  left: 0;
   .active {
     border-right: 4px solid #fff;
     img {

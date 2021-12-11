@@ -33,7 +33,6 @@ const Hero = (props) => {
         <>
             <Sidebar />
             <div className={styles.container}>
-
                 <h1>Hi, {adminUser.firstName} </h1>
                 <button onClick={handleLogout}>Logout</button>
 
@@ -41,12 +40,12 @@ const Hero = (props) => {
                 <h2>Bank Members: {bankMembers}</h2>
                 <h2>Bank Transactions: {bankTransactions}</h2>
 
-                <section className={styles.links}>
+                {/* <section className={styles.links}>
                     <NavLink to="/admin-create" exact>Create New Account</NavLink>
                     <NavLink to="/admin-transaction" exact>Make Transaction</NavLink>
                     <NavLink to="/admin-members" exact>Members List</NavLink>
                     <NavLink to="/admin-history" exact>Transaction History</NavLink>
-                </section>
+                </section> */}
             </div>
         </>
     )
