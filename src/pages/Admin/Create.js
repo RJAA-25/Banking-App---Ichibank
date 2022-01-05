@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './create.module.css';
 
 // Framer Motion
-import { motion, useAnimation } from 'framer-motion/dist/es/';
+import { motion } from 'framer-motion/dist/es/';
 
 // Components
 import AccountNo from '../../components/Admin/Hero/Create/AccountNo'

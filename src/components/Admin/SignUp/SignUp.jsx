@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useReducer } from 'react';
 
 // CSS
 import styles from './signUp.module.css';
 
 // Framer Motion
-import { motion, useAnimation } from 'framer-motion/dist/es/';
+import { motion } from 'framer-motion/dist/es/';
+
+const emailReducer = (state, action) => {
+    return {};
+};
 
 const SignUp = (props) => {
 
@@ -20,6 +24,9 @@ const SignUp = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordCheck, setPasswordCheck] = useState("");
+
+    // useReducer
+    const [emailState, dispatchEmail] = useReducer();
 
     // Error States
     const [errorUsername, setErrorUsername] = useState("");

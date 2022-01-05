@@ -3,7 +3,8 @@ import React from 'react'
 const GuestMember = (props) => {
 
     // Destructured Components
-    const {setGuestActive,setGuestMember} = props;
+    const { setGuestActive, setGuestMember } = props;
+    console.log(setGuestActive);
 
     // Event Handlers
     const handleNewGuestMember = () => {

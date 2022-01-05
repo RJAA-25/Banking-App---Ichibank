@@ -33,6 +33,7 @@ const Transaction = () => {
                         setDeposit(true);
                         setWithdraw(false);
                         setTransfer(false);
+                        console.log(transfer);
                      }}>
                     Deposit
                 </section>

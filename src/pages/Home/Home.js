@@ -4,8 +4,7 @@ import React from 'react'
 import styles from './home.module.css'
 
 // Framer Motion
-import { useInView } from 'react-intersection-observer';
-import { motion, useAnimation } from 'framer-motion/dist/es/';
+import { motion } from 'framer-motion/dist/es/';
 
 import tower from '../../assets/images/tower.jfif';
 import papers from '../../assets/images/papers.jfif';

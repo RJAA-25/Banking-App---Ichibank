@@ -11,6 +11,7 @@ const History = () => {
 
     // Destructured Properties
     const memberList = JSON.parse(localStorage.getItem("memberList"));
+    console.log(memberList);
     const transactionHistory = JSON.parse(localStorage.getItem("transactionHistory"));
     const deposit = transactionHistory.filter(obj => obj.type === "deposit");
     const withdraw = transactionHistory.filter(obj => obj.type === "withdraw");

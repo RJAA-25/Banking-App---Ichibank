@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import styles from './clientMember.module.css'
 
 // Framer Motion
-import { motion, useAnimation } from 'framer-motion/dist/es/';
+import { motion } from 'framer-motion/dist/es/';
 
 const ClientMember = (props) => {
 
